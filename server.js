@@ -1,13 +1,13 @@
-var http = require("http");
+const http = require('http');
 
+const PORT = 3000
 
+const server = http.createServer((req, res)=>{
+    res.writeHead(200,{'content-type':'text/html'} )
+    res.end('<p>Hello Node!!!!</p>\n');
+});
 
-http.createServer(function (request, response) {
-    
+server.listen(PORT,()=>{
+    console.log(`YOU SERVER IS RUNNING ON : http://localhost:${PORT}`)
+})
 
-    response.writeHead(200, {'Content-Type': 'text/plain'});
-
-    response.end("salut ISSAM ")
-}).listen(8081)
-
-console.log('Server running at http://127.0.0.1:8081/');
